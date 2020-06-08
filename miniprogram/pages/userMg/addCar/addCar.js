@@ -1,13 +1,11 @@
-// miniprogram/pages/bill/bill.js
+// miniprogram/pages/userMg/addCar/addCar.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tabList: ['未付款', '已付款'],
-    tabCurrent: 0,
-    statusCount:[],
+
   },
 
   /**
@@ -63,12 +61,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
-  },
-  tabClick(e){},
-  addBill(e){
-    wx.navigateTo({
-      url: '../addBill/addBill',
-    })
+
   }
 })

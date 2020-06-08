@@ -23,6 +23,11 @@ Page({
         serveName:'商家信息',
         msg:2,
       },
+      {
+        img:'../../assets/mypage/mypage-car.png',
+        serveName:'车辆管理',
+        msg:3,
+      },
     ]
   },
 
@@ -98,7 +103,17 @@ Page({
   },
   //服务项处理
   serveHandle(e){
-    console.log(e)
+    let msg = e.currentTarget.dataset.msg;
+    switch(msg){
+      case 1 :
+        return wx.navigateTo({
+          url: '../bill/bill',
+        });
+        case 3 :
+          return wx.navigateTo({
+            url: '../userMg/userMg',
+          });
+    }
   }
   
 })

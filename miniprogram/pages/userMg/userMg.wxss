@@ -1,0 +1,35 @@
+/* miniprogram/pages/userMg/userMg.wxss */
+page{
+  background-color: #f6f6f6;
+  height: 100%;
+}
+.searchBoxOut{
+  background-color: white;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.serchBoxInner{
+  align-items: center;
+  background-color: #f6f6f6;
+  display: flex;
+  width: 90%;
+  height: 70%;
+  border-radius: 10px;
+  align-items: center;
+}
+.next{
+  width: 90%;
+  height:88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  background: linear-gradient(to right,rgb(83, 147, 243),#3377FE);
+  color: #fff;
+  font-size: 36rpx;
+  border-radius: 16rpx;
+  position: fixed;
+  z-index: 9999;
+  bottom: 15rpx;
+  margin-left: 5%;
+}

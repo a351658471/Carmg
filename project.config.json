@@ -44,9 +44,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
+					"id": 1,
+					"name": "pages/userMg/userMg",
+					"pathName": "pages/userMg/userMg",
 					"query": "",
 					"scene": null
 				},
@@ -61,6 +61,7 @@
 					"id": -1,
 					"name": "pages/addBill/addBill",
 					"pathName": "pages/addBill/addBill",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -14,9 +14,8 @@ font-weight: bold;
   display: flex;
   align-items: center;
   height: 5vh;
-line-height: 5vh;
-border-bottom: 2px solid #f6f6f6;
-
+  line-height: 5vh;
+  border-bottom: 2px solid #f6f6f6;
 }
 .userLeft{
   width: 20vw;

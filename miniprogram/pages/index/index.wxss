@@ -12,6 +12,7 @@ page{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 .cardTopLeft{
   display: flex;
@@ -80,10 +81,12 @@ page{
 .serveList{
   margin-top: 1.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .serveItem{
-  width: 30vw;
+  margin-bottom: 1.5rem;
+  width: 33vw;
   text-align: center;
 }
 .imgBox{
