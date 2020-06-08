@@ -1,0 +1,45 @@
+<!--miniprogram/pages/myPage/myPage.wxml-->
+<view class="index">
+
+<!-- 头部卡片 -->
+	<view class="head">
+		<view class="card">
+			<view class="cardTop">
+				<view class="cardTopLeft">
+					<view class="UserAvatar">
+						<image mode="widthFix" style="width:100%;border-radius: 100%;" src="{{userInfo.avatarUrl?userInfo.avatarUrl:background}}"></image>
+					</view>
+					<view class="userName"></view>
+					<button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="login" size="mini" hover-class="none">登录/注册</button>
+				</view>
+				<view class="cardTopRight">
+				</view>
+			</view>
+			<view class="cardBottom">
+				<view class="phone">
+					<view style="font-size:24rpx;color:#9B9B9B">手机号:</view>
+					<view style="font-size:24rpx;margin-left:.5rem">修改</view>
+				</view>
+				<view class="vipBox">
+					VIP
+				</view>
+			</view>
+		</view>
+		<view class="headBottom">
+		</view>
+	</view>
+
+	<!-- 服务 -->
+	<view class="serveBox">
+	  <!-- 二级标题 -->
+		<view class="secondTitle">管理</view>
+		<!-- 服务列表 -->
+		<view class="serveList">
+		 <!-- 列表项 -->
+			<view class="serveItem" wx:for="{{mgList}}" bindtap="serveHandle" data-msg="{{item.msg}}" wx:key="key">
+				<view class="imgBox"><image src="{{item.img}}" mode="widthFix" style="width:100%"></image></view>
+				<view class="serveName">{{item.serveName}}</view>
+			</view>
+		</view>
+	</view>
+</view>

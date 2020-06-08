@@ -1,0 +1,85 @@
+/* miniprogram/pages/addBill/addBill.wxss */
+page{
+  background-color: #f6f6f6;
+}
+.billMsg{
+  padding: 3vw;
+font-size: 32rpx;
+font-weight: bold;
+}
+.userInfo{
+  background-color: white;
+}
+.carRow{
+  display: flex;
+  align-items: center;
+  height: 5vh;
+line-height: 5vh;
+border-bottom: 2px solid #f6f6f6;
+
+}
+.userLeft{
+  width: 20vw;
+text-align: right;
+font-size: 32rpx;
+color: #7B7575;
+font-weight: bold;
+margin-right: 1rem;
+
+}
+.repairBox{
+  background-color: white;
+}
+.serveTitle{
+  width:100%;
+  text-align: center;
+  height: 5vh;
+  line-height: 5vh;
+  border-bottom: 2px solid #f6f6f6
+}
+.textBox{
+  margin:auto;
+  width: 90%;
+}
+.next{
+  width: 90%;
+  height:88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  background: linear-gradient(to right,rgb(83, 147, 243),#3377FE);
+  color: #fff;
+  font-size: 36rpx;
+  border-radius: 16rpx;
+  position: fixed;
+  z-index: 9999;
+  bottom: 15rpx;
+  margin-left: 5%;
+}
+.servePrice{
+  border-top: 2px solid #f6f6f6;
+  line-height: 5vh;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  
+}
+.leftName{
+  width: 20vw;
+  text-align: center;
+  font-size: 32rpx;
+  color: #7B7575;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+.sPrice{
+  display: flex;
+  align-items: center;
+}
+.totalPrice{
+  height: 10vh;
+  line-height: 10vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

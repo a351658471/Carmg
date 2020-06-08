@@ -1,0 +1,11 @@
+/* miniprogram/pages/bill/bill.wxss */
+.addBill{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: #3377FE;
+  color: #FFFFFF;
+  font-size: 36rpx;
+  text-align: center;
+  padding: 16rpx 0 22rpx 0;
+}

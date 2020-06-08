@@ -1,0 +1,14 @@
+var totalPrice=function (obj){
+  var a = 0;
+  for(var i=0;i < obj.billList.length;i++){
+    a+= obj.billList[i].price*obj.billList[i].count
+  }
+  var total = a + obj.serveDetail.price;
+  
+  console.log(total)
+  return total
+}
+
+module.exports={
+  totalPrice:totalPrice
+}

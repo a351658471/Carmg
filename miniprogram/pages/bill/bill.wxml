@@ -1,0 +1,17 @@
+<!--miniprogram/pages/bill/bill.wxml-->
+<view class="billMg">
+  <view class="infoTab">
+    <mg-tab tabList="{{tabList}}" bind:tabClick="tabClick" tabCurrent="{{tabCurrent}}" soldLength="{{statusCount}}" fontSize="28rpx"></mg-tab>
+  </view>
+  <!-- <view class="isShow" wx:if="{{isShow}}">暂无车辆</view> -->
+  <view class="billBox">
+    <view class="billTop">
+       <view>
+         
+       </view>
+    </view>
+    <view class="billBottom">
+    </view>
+  </view>
+  <view class="addBill" bindtap="addBill">添加账单</view>
+</view>

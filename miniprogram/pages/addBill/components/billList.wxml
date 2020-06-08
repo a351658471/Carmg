@@ -1,0 +1,36 @@
+<!--pages/addBill/components/billList.wxml-->
+			<view class="goodsBox" wx:for="{{billList}}" wx:key="key">
+				<view class="goodsName goodsRow">
+					<view class="goodslabel leftName">配件名称</view>
+					<input style="width:60%;height:100%" data-index="{{index}}" placeholder="必填" placeholder-style="color:#3377FE;font-size:0.95rem;font-weight:bolder" value="{{item.goodsName}}" bindblur="nameBlur"></input>
+					<view class="nameSearch" bindtap="deleteGoods" data-index="{{index}}">
+						<image src="../../../assets/delete2.png" mode="widthFix" style="width:50%;margin-left:25%"></image>
+					</view>
+				</view>
+				<!-- 规格 -->
+				<view class="unitBox goodsRow">
+					<view class="leftName">规格</view>
+					<view class="unitBody">
+						<view style="height: 3vh;width:10vw;text-align:center;line-height: 3vh;"><input value="{{item.unit}}" bindblur="unitChange"></input></view>
+						<view style="margin:0 .5rem">/</view>
+						<view class="price"><input value="{{item.price}}"  bindblur="priceChange" data-index="{{index}}" type="number"></input></view>
+					</view>
+				</view>
+
+				<view class="goodsBottom goodsRow">
+					<view class="total">
+						<view class="leftName">金额</view>
+						<view>{{item.count*item.price}} ￥</view>
+					</view>
+
+					<!-- 数量加减 -->
+					<view class="conBox">
+						<view class="con" bindtap="reduction" data-index="{{index}}" data-count="{{item.count}}">-</view>
+						<view class="num">{{item.count}}</view>
+						<view class="con" bindtap="addFun" data-index="{{index}}" data-count="{{item.count}}">+</view>
+					</view>
+				</view>
+			</view>
+      <view class="addRow">
+      <view class="addGoods" bindtap="addGoods">添加配件</view>
+    </view>

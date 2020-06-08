@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mg-tab":"./components/leftTab/leftTab",
+    "my-nexttab": "./components/nextTab/nextTab"
+  }
+}

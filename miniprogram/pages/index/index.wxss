@@ -1,0 +1,97 @@
+/* miniprogram/pages/myPage/myPage.wxss */
+page{
+  height: 100vh;
+  background-color: white;
+}
+.head{
+  background-color: #1974FF;
+  height: 22vh;
+  position: relative;
+}
+.cardTop{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cardTopLeft{
+  display: flex;
+  align-items: center;
+}
+.UserAvatar{
+  width: 10vw;
+  
+}
+.card{
+  box-sizing: border-box;
+  padding:20rpx 50rpx;
+  z-index: 1;
+  width: 90vw;
+  height: 12vh;
+  background-color: #FFFFFF;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform:translateX(-50%);
+  border-radius: 18rpx;
+  box-shadow: 0px 2px 7px 0px rgba(55, 55, 55, 0.18);
+}
+.headBottom{
+  width: 100vw;
+  height: 5vh;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+}
+.login{
+  margin-left: 5vw;
+  font-size: 14px !important;
+  color: rgba(0,0,0,.5);
+  border: 1px solid rgba(0,0,0,.2);
+}
+.cardBottom{
+  margin-top: .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.phone{
+  display: flex;
+}
+.vipBox{
+  height: 1.5rem;
+  width: 4rem;
+  background-color: #FBCE67;
+  color: #A87243;
+  line-height: 1.5rem;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 14px;
+}
+.serveBox{
+  /* padding:2rem; */
+  margin-top: 2rem;
+}
+.secondTitle{
+  margin-left: 2rem;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bolder;
+}
+.serveList{
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.serveItem{
+  width: 30vw;
+  text-align: center;
+}
+.imgBox{
+  width: 12vw;
+  margin: auto;
+}
+.serveName{
+  margin-top: .3rem;
+font-size: 25rpx;
+color: #686666;
+}

@@ -1,0 +1,78 @@
+/* pages/addBill/components/billList.wxss */
+.goodsBox{
+  background-color: white;
+  margin-bottom: 1rem;
+  border: 2rpx solid #E1E1E1;
+
+}
+.goodsName{
+  display: flex;
+}
+.nameSearch{
+  width: 10vw;
+}
+.unitBox{
+  display: flex;
+}
+.unitBody{
+  display: flex;
+  align-items: center;
+}
+.price{
+  width: 20vw;
+  height: 3vh;
+  text-align: left;
+  line-height: 3vh;
+}
+.goodsBottom{
+  display: flex;
+  justify-content: space-between;
+}
+.total{
+  display: flex;
+}
+.leftName{
+  width: 20vw;
+  text-align: right;
+  font-size: 32rpx;
+  color: #7B7575;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+.goodsRow{
+  height: 5vh;
+  line-height: 5vh;
+  border-bottom: 2px solid #f6f6f6
+}
+.conBox{
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+.num{
+  width: 12vw;
+  height: 3vh;
+  border: 1px solid grey;
+  text-align: center;
+  line-height: 3vh;
+}
+.con{
+  width: 8vw;
+  height: 3vh;
+  border: 1px solid grey;
+  text-align: center;
+  line-height: 3vh;
+}
+.addRow{
+  width: 100vw;
+}
+.addGoods{
+  width: 25vw;
+  height: 5vh;
+  background: linear-gradient(to right,rgb(83, 147, 243),#3377FE);
+  color: white;
+  text-align: center;
+  line-height: 5vh;
+  margin: auto;
+  border-radius: 15px;
+}
