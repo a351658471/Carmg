@@ -6,7 +6,8 @@ Page({
    */
   data: {
     isShowInput:false, // 服务金额input是否显示
-    totalPrice:0,
+    carPlate:'',
+    phone:'',
     resData:{
       billList:[
         {
@@ -107,6 +108,16 @@ Page({
     }
     )
   },
+  carPlateBlur(e){
+    this.setData({
+      carPlate:e.detail.value
+    })
+  },
+  phoneBlur(e){
+    this.setData({
+      phone:e.detail.value
+    })
+  },
   nameBlur(e){
     let index = e.detail.index;
     let value = e.detail.value;
@@ -162,7 +173,11 @@ Page({
     })
   },
   bindTextAreaBlur(e){
-    console.log(e);
+    let value = e.detail.value;
+    let a = 'resData.serveDetail.serveContent'
+    this.setData({
+      [a]:value
+    })
   },
   //点击服务金额
   showInput(){
@@ -182,6 +197,28 @@ Page({
   },
   //保存
   saveEvent(){
-
+    let carPlate = this.data.carPlate;
+    let phone = this.data.phone;
+    let detail = JSON.stringify(this.data.resData)
+    let total = this.totalPrice(this.data.resData)
+    console.log(detail)
+    wx.cloud.callFunction({
+      name:'bill',
+      data:{
+        action:'addBill',
+        carNum:carPlate,
+        phone:phone,
+        detail:detail,
+        total:total,
+      }
+    })
+  },
+  totalPrice (obj){
+    var a = 0;
+    for(var i=0;i < obj.billList.length;i++){
+      a+= obj.billList[i].price*obj.billList[i].count
+    }
+    var total = a + obj.serveDetail.price;
+    return total
   }
 })

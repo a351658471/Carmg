@@ -7,11 +7,11 @@
     <view class="userInfo">
         <view class="carPlate carRow">
             <view class="userLeft"> 车牌号</view>
-             <input bindblur="carPlateBlur" value="{{resData.user.carPlate}}"></input>
+            <input bindblur="carPlateBlur" placeholder="例:闽D12345" value="{{carPlate}}" bindblur="carPlateBlur"></input>
         </view>
        <view class="userPhone carRow">
           <view class="userLeft">手机号</view>
-          <input bindblur="phoneBlur" value="{{resData.user.phone}}"></input>
+          <input bindblur="phoneBlur" value="{{phone}}" bindblur="phoneBlur"></input>
        </view>
     </view>
   </view>
@@ -33,7 +33,7 @@
       <view class="servePrice" bindtap="showInput">
 						<view class="leftName">金额</view>
             <input wx:if="{{isShowInput}}" value="{{resData.serveDetail.price}}" bindblur="servePriceBlur" focus></input>
-						<view wx:else >{{resData.serveDetail.price}} ￥</view>
+						<view wx:else >{{resData.serveDetail.price?resData.serveDetail.price:0}} ￥</view>
 					</view>
 		</view>
 	</view>
