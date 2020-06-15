@@ -7,8 +7,7 @@ Page({
   data: {
     carList: [],
     page: 1,
-    pageCount: 8,
-    timeId:-1,
+    pageCount: 10,
     canLoadMore:true
   },
 
@@ -80,11 +79,6 @@ Page({
       this.getData(value)
     }, 500);
   },
-  addEvent() {
-    wx.navigateTo({
-      url: './addCar/addCar',
-    })
-  },
   getData(e) {
     let searchValue = e == null?'':e
     wx.cloud.callFunction({
@@ -112,7 +106,7 @@ Page({
       }
     })
   },
-  editHandle(e) {
+  chooseHandle(e) {
     let index = e.currentTarget.dataset.index;
     let _id = e.currentTarget.dataset.id;
     let carNum = this.data.carList[index].carNum;
@@ -123,40 +117,7 @@ Page({
       phone
     }
     wx.navigateTo({
-      url: './addCar/addCar?date=' + JSON.stringify(date),
+      url: '../../addBill/addBill?date=' + JSON.stringify(date),
     })
   },
-  removeHandle(e) {
-    wx.showModal({
-      title: '提示',
-      content: '是否确认删除',
-      success:(res)=>{
-        if (res.confirm) {
-          let index = e.currentTarget.dataset.index;
-          let _id = e.currentTarget.dataset.id;
-          console.log(_id)
-          wx.cloud.callFunction({
-            name: 'userCar',
-            data: {
-              action: 'removeUserCar',
-              _id: _id
-            }
-          }).then(res => {
-            if (res.result.code == 0) {
-              this.data.carList.splice(index, 1);
-              this.setData({
-                carList: this.data.carList
-              })
-              wx.showToast({
-                title: '删除成功',
-                icon: "none"
-              });
-            }
-
-          })
-        }
-      }
-    })
-
-  }
 })

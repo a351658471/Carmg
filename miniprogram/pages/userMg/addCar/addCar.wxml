@@ -5,7 +5,7 @@
           <view class="baseItem">
             <view class="ItemName">车牌号</view>
             <view class="inputItem">
-              <input type="text" name="cBrand" bindblur="blurEvnet2" placeholder="例：闽D123456" placeholder-style="color:#3377FE;font-size:0.95rem;font-weight:bolder"></input>
+              <input type="text" name="cBrand" bindblur="blurEvnet1" placeholder="例：闽D123456" value="{{carNum}}"></input>
             </view>
           </view>
         </view>
@@ -13,12 +13,12 @@
           <view class="baseItem">
             <view class="ItemName">手机号</view>
             <view class="inputItem">
-              <input type="text" name="cBrand" bindblur="blurEvnet2" placeholder="必填" placeholder-style="color:#3377FE;font-size:0.95rem;font-weight:bolder"></input>
+              <input type="text" name="cBrand" bindblur="blurEvnet2" placeholder="必填" value="{{phone}}" placeholder-style="color:#3377FE;font-size:0.95rem;font-weight:bolder"></input>
             </view>
           </view>
         </view>
     </view>
     <view class="next" bindtap="addEvent">
-      保存
+     {{isEdit?'保存修改':'保存'}}
   </view>
 </view>

@@ -1,25 +1,38 @@
 <!--miniprogram/pages/addBill/addBill.wxml-->
 <wxs module="totalPrcie" src="../../filter/totalPrice.wxs"></wxs>
 <view class="addBill">
-  <!-- 客户信息 -->
-  <view class="user">
-    <view class="billMsg">客户信息</view>
-    <view class="userInfo">
-        <view class="carPlate carRow">
-            <view class="userLeft"> 车牌号</view>
-            <input bindblur="carPlateBlur" placeholder="例:闽D12345" value="{{carPlate}}" bindblur="carPlateBlur"></input>
-        </view>
-       <view class="userPhone carRow">
-          <view class="userLeft">手机号</view>
-          <input bindblur="phoneBlur" value="{{phone}}" bindblur="phoneBlur"></input>
-       </view>
-    </view>
-  </view>
+	<!-- 客户信息 -->
+	<view class="user">
+		<view class="billMsg">客户信息</view>
+		<view class="userInfo">
+			<view class="carPlate carRow">
+				<view class="userLeft"> 车牌号</view>
+				<input bindblur="carPlateBlur" placeholder="例:闽D12345" value="{{carPlate}}" bindblur="carPlateBlur"></input>
+			</view>
+			<view class="userPhone carRow">
+				<view class="userLeft">手机号</view>
+				<input bindblur="phoneBlur" value="{{phone}}" bindblur="phoneBlur"></input>
+			</view>
+		</view>
+	</view>
+	<!-- 日期 -->
+	<view class="user">
+		<view class="billMsg">账单日期</view>
+		<view class="userInfo carRow">
+			<view class="userLeft">日期</view>
+			<picker mode="date" value="{{date}}" bindchange="bindDateChange">
+				<view class="picker" style="width:40vw;color:{{date ==''?'#3377FE':''}};font-size:0.95rem;font-weight:{{date ==''?'bolder':''}}">
+					{{date ==''?"必填":date}}
+				</view>
+			</picker>
+		</view>
+	</view>
+
 	<!-- 配件清单 -->
 	<view class="goods">
 		<view class="billMsg">配件清单</view>
 		<view class="goodsList">
-			<billList billList="{{resData.billList}}" bind:nameBlur="nameBlur" bind:priceChange="priceChange" bind:reduction="reduction" bind:addFun="addFun" bind:deleteGoods="deleteGoods" bind:addGoods="addGoods"></billList>
+			<billList billList="{{resData.billList}}" bind:goodsPrice="goodsPrice" bind:nameBlur="nameBlur" bind:priceChange="priceChange" bind:reduction="reduction" bind:addFun="addFun" bind:deleteGoods="deleteGoods" bind:addGoods="addGoods"></billList>
 		</view>
 	</view>
 	<!-- 维修清单 -->
@@ -30,26 +43,26 @@
 			<view class="serveContent">
 				<textarea class="textBox" placeholder="请输入..." bindblur="bindTextAreaBlur" value="{{resData.serveDetail.serveContent}}"></textarea>
 			</view>
-      <view class="servePrice" bindtap="showInput">
-						<view class="leftName">金额</view>
-            <input wx:if="{{isShowInput}}" value="{{resData.serveDetail.price}}" bindblur="servePriceBlur" focus></input>
-						<view wx:else >{{resData.serveDetail.price?resData.serveDetail.price:0}} ￥</view>
-					</view>
+			<view class="servePrice" bindtap="showInput">
+				<view class="leftName">金额</view>
+				<input wx:if="{{isShowInput}}" value="{{resData.serveDetail.price}}" bindblur="servePriceBlur" focus></input>
+				<view wx:else>{{resData.serveDetail.price?resData.serveDetail.price:0}} ￥</view>
+			</view>
 		</view>
 	</view>
 
-  <!-- 总计 -->
-  <view>
-    <view class="billMsg">总计</view>
-    <view class="totalPrice">
-						<view class="leftName">总计金额</view>
-						<view style="margin-right:1rem">{{totalPrcie.totalPrice(resData)}}￥</view>
-					</view>
-  </view>
-  <!-- sizebox -->
-  <view style="height:15vh"></view>
-  <!-- 保存 -->
-  <view class="next" bindtap="saveEvent">
-      保存
-  </view>
+	<!-- 总计 -->
+	<view>
+		<view class="billMsg">总计</view>
+		<view class="totalPrice">
+			<view class="leftName">总计金额</view>
+			<view style="margin-right:1rem">{{totalPrcie.totalPrice(resData)}}￥</view>
+		</view>
+	</view>
+	<!-- sizebox -->
+	<view style="height:15vh"></view>
+	<!-- 保存 -->
+	<view class="next" bindtap="saveEvent">
+		保存
+	</view>
 </view>

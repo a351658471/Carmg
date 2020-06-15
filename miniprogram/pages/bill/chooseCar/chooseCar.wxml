@@ -1,4 +1,3 @@
-<!--miniprogram/pages/userMg/userMg.wxml-->
 <view class="userMg">
   <view class="searchBoxOut">
     <view class="serchBoxInner">
@@ -7,7 +6,7 @@
     </view>
   </view>
   <!-- 车辆列表 -->
-  <view class="carBox" wx:for="{{carList}}" wx:key="key" bindtap="editHandle" data-id="{{item._id}}" data-index="{{index}}">
+  <view class="carBox" wx:for="{{carList}}" wx:key="key" bindtap="chooseHandle" data-id="{{item._id}}" data-index="{{index}}">
       <view class="numBox item">
         <view class="leftTitle">车牌号</view>
         <view class="rightValue">{{item.carNum}}</view>
@@ -16,11 +15,10 @@
         <view class="leftTitle">手机号</view>
         <view class="rightValue">{{item.phone}}</view>
       </view>
-      <view class="remove" catchtap="removeHandle" data-id="{{item._id}}" data-index="{{index}}">删除</view>
+      <!-- <view class="remove" catchtap="removeHandle" data-id="{{item._id}}" data-index="{{index}}">删除</view> -->
   </view>
-  <view style="height:10vh"></view>
   <!-- 添加车辆 -->
-  <view class="next" bindtap="addEvent">
+  <!-- <view class="next" bindtap="addEvent">
       添加车辆
-  </view>
+  </view> -->
 </view>

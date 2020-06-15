@@ -68,7 +68,7 @@ Page({
   tabClick(e){},
   addBill(e){
     wx.navigateTo({
-      url: '../addBill/addBill',
+      url: './chooseCar/chooseCar',
     })
   }
 })

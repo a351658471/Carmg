@@ -6,9 +6,11 @@ Page({
    */
   data: {
     isShowInput:false, // 服务金额input是否显示
+    date:'',
     carPlate:'',
     phone:'',
     resData:{
+      billDate:0,
       billList:[
         {
           goodsName:'火花塞',
@@ -34,7 +36,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+     if(options.date !=undefined){
+       let date = JSON.parse(options.date)
+       this.setData({
+         carPlate:date.carNum,
+         phone:date.phone
+       })
+     }
   },
 
   /**
@@ -195,6 +203,15 @@ Page({
       resData:this.data.resData
     })
   },
+    //日期选择器
+    bindDateChange: function(e) {
+      let dateValue =new Date(e.detail.value).getTime();
+      let a = "resData.billDate"
+      this.setData({
+        date: e.detail.value,
+        [a]:dateValue
+      })
+    },
   //保存
   saveEvent(){
     let carPlate = this.data.carPlate;
@@ -210,6 +227,22 @@ Page({
         phone:phone,
         detail:detail,
         total:total,
+      }
+    }).then(res=>{
+      if(res.result.code == 0){
+        var pages = getCurrentPages();
+        var prevPage = pages[pages.length -3];
+        var preData = prevPage.data;
+        wx.showToast({
+          title: '账单保存成功',
+          icon:"none",
+          duration:1000
+        })
+        setTimeout(() => {
+          wx.navigateBack({
+            delta:2
+          })
+        }, 1000);
       }
     })
   },

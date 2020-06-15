@@ -9,7 +9,7 @@ const _ = db.command
 exports.main = async (event, context) => {
   switch(event.action){
     case 'addBill':
-      return billManage(event);
+      return addBill(event);
   }
   // const wxContext = cloud.getWXContext()
 
@@ -21,10 +21,9 @@ exports.main = async (event, context) => {
   // }
 }
 
- async function billManage(event){
-   let nowTime = new Date().getTime();
+ async function addBill(event){
    let data={
-     create_time:nowTime,
+     create_time:event.billDate,
      carNum:event.carNum,
      phone:event.phone,
      detail:event.detail,
@@ -34,6 +33,9 @@ exports.main = async (event, context) => {
    return await db.collection('bill').add({
       data:data
     }).then(res=>{
-      console.log(res)
+      return{
+        code:0,
+        data:res
+      }
     })
  }
