@@ -1,6 +1,6 @@
 /* miniprogram/pages/myPage/myPage.wxss */
 page{
-  height: 100vh;
+  height: 100%;
   background-color: white;
 }
 .head{
@@ -27,7 +27,7 @@ page{
   padding:20rpx 50rpx;
   z-index: 1;
   width: 90vw;
-  height: 12vh;
+  height: 200rpx;
   background-color: #FFFFFF;
   position: absolute;
   left: 50%;
