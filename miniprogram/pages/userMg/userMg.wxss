@@ -9,6 +9,7 @@ page{
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 1rem;
 }
 .serchBoxInner{
   align-items: center;
@@ -32,4 +33,25 @@ page{
   z-index: 9999;
   bottom: 15rpx;
   margin-left: 5%;
+}
+.carBox{
+  margin-bottom: 2px;
+  background-color: white;
+  padding: 0 1rem;
+  position: relative;
+}
+.item{
+  display: flex;
+  color: #9B9B9B;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.rightValue{
+  margin-left: 1rem;
+  font-size: 15px;
+}
+.edit{
+  position: absolute;
+  right: 20px;
+  top: 25%;
 }

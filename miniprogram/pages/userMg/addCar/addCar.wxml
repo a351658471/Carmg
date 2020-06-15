@@ -1,2 +1,24 @@
 <!--miniprogram/pages/userMg/addCar/addCar.wxml-->
-<text>miniprogram/pages/userMg/addCar/addCar.wxml</text>
+<view class="carmg">
+    <view class="baseContent">
+       <view class="borderBottom">
+          <view class="baseItem">
+            <view class="ItemName">车牌号</view>
+            <view class="inputItem">
+              <input type="text" name="cBrand" bindblur="blurEvnet2" placeholder="例：闽D123456" placeholder-style="color:#3377FE;font-size:0.95rem;font-weight:bolder"></input>
+            </view>
+          </view>
+        </view>
+        <view class="borderBottom">
+          <view class="baseItem">
+            <view class="ItemName">手机号</view>
+            <view class="inputItem">
+              <input type="text" name="cBrand" bindblur="blurEvnet2" placeholder="必填" placeholder-style="color:#3377FE;font-size:0.95rem;font-weight:bolder"></input>
+            </view>
+          </view>
+        </view>
+    </view>
+    <view class="next" bindtap="addEvent">
+      保存
+  </view>
+</view>

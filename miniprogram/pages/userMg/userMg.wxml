@@ -3,12 +3,20 @@
   <view class="searchBoxOut">
     <view class="serchBoxInner">
         <icon type="search" size="35" style="height:80%"></icon>
-        <input style="margin-left:.5rem" placeholder="车牌/手机号"></input>
+        <input style="margin-left:.5rem;width:70vw" placeholder="车牌/手机号"></input>
     </view>
   </view>
   <!-- 车辆列表 -->
-  <view>
-  
+  <view class="carBox" wx:for="{{carList}}" wx:key="key">
+      <view class="numBox item">
+        <view class="leftTitle">车牌号</view>
+        <view class="rightValue">{{item.num}}</view>
+      </view>
+      <view class="phoneBox item">
+        <view class="leftTitle">手机号</view>
+        <view class="rightValue">{{item.phone}}</view>
+      </view>
+      <view class="edit">编辑</view>
   </view>
   <!-- 添加车辆 -->
   <view class="next" bindtap="addEvent">

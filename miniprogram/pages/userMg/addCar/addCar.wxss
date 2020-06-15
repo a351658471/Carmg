@@ -1,1 +1,43 @@
 /* miniprogram/pages/userMg/addCar/addCar.wxss */
+.next{
+  width: 90%;
+  height:88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  background: linear-gradient(to right,rgb(83, 147, 243),#3377FE);
+  color: #fff;
+  font-size: 36rpx;
+  border-radius: 16rpx;
+  position: fixed;
+  z-index: 9999;
+  bottom: 15rpx;
+  margin-left: 5%;
+}
+.baseContent{
+  color: #7B7575;
+  background: #FFFEFF;
+
+}
+.borderBottom{
+  width: 100%;
+  border-bottom: 1px solid #F8F6F7
+}
+.baseItem{
+  display: flex;
+  height: 13vw;
+  line-height: 13vw;
+  padding:0 3vw;
+}
+.ItemName{
+  width:20vw;
+  text-align: right;
+  font-size: 30rpx;
+  color: #7B7575;
+  font-weight: bold;
+}
+.inputItem{
+  display: flex;
+  align-items: center;
+  margin-left: 10vw;
+  font-size: 28rpx;
+}
