@@ -108,7 +108,24 @@ Page({
     this.data.resData.billList.forEach((item,i)=>{
       if(i == index){
         this.data.resData.billList[index].price = parseInt(value);
-        this.data.resData.billList[index].count = item.count
+        // this.data.resData.billList[index].count = item.count
+      }
+    })
+    this.setData({
+      resData: this.data.resData
+    }
+    )
+  },
+  //规格改变
+  unitChange(e){
+    let index = e.detail.index;
+    let value = e.detail.value;
+    console.log(index)
+    console.log(value)
+    this.data.resData.billList.forEach((item,i)=>{
+      if(i == index){
+        this.data.resData.billList[index].unit = value;
+        // this.data.resData.billList[index].count = item.count
       }
     })
     this.setData({
@@ -218,6 +235,7 @@ Page({
     let phone = this.data.phone;
     let detail = JSON.stringify(this.data.resData)
     let total = this.totalPrice(this.data.resData)
+    let billDate =this.data.resData.billDate
     console.log(detail)
     wx.cloud.callFunction({
       name:'bill',
@@ -227,12 +245,25 @@ Page({
         phone:phone,
         detail:detail,
         total:total,
+        billDate:billDate
       }
     }).then(res=>{
       if(res.result.code == 0){
         var pages = getCurrentPages();
         var prevPage = pages[pages.length -3];
         var preData = prevPage.data;
+        let item = {
+        carNum:carPlate,
+        phone:phone,
+        detail:detail,
+        total:total,
+        create_time:billDate,
+        pay:0
+        }
+        preData.resData.push(item)
+        prevPage.setData({
+          resData:preData.resData
+        })
         wx.showToast({
           title: '账单保存成功',
           icon:"none",

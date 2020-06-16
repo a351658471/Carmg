@@ -10,6 +10,10 @@ exports.main = async (event, context) => {
   switch(event.action){
     case 'addBill':
       return addBill(event);
+    case 'queryBill':
+      return queryBill(event);
+    case 'getTotal':
+      return getTotal(event);
   }
   // const wxContext = cloud.getWXContext()
 
@@ -28,8 +32,9 @@ exports.main = async (event, context) => {
      phone:event.phone,
      detail:event.detail,
      total:event.total,
-     isPay:false,
-   }
+     payOff:false,
+     pay:0,
+   } 
    return await db.collection('bill').add({
       data:data
     }).then(res=>{
@@ -38,4 +43,39 @@ exports.main = async (event, context) => {
         data:res
       }
     })
+ }
+
+ async function queryBill(event){
+   let type = event.type;
+   let page = event.page;
+   let pageCount = event.pageCount;
+   let idx = page -1;
+   let ispay = type == 0?false:true
+    return db.collection('bill').where({
+      payOff:ispay
+    }).skip(idx*pageCount).limit(pageCount).get().then(res=>{
+      return res
+    })
+ }
+
+ async function getTotal(event){
+  return await db.collection('bill').where({
+     payOff:false,
+   }).get().then(res=>{
+    let total =0
+     if(res.data.length==0){
+       return {
+         total:total,
+         code:0
+       }
+     }else{
+       res.data.forEach(item=>{
+        total += item.total - item.pay;
+       });
+       return {
+         total:total,
+         code:0
+       }
+     }
+   })
  }

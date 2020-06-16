@@ -5,7 +5,11 @@
     "pages/addBill/addBill",
     "pages/userMg/userMg",
     "pages/userMg/addCar/addCar",
-    "pages/bill/chooseCar/chooseCar"
+    "pages/bill/chooseCar/chooseCar",
+    "pages/shopMessage/shopMessage",
+    "pages/collectionMg/collectionMg",
+    "pages/collectionMg/chooseCar/chooseCar",
+    "pages/addCollection/addCollection"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

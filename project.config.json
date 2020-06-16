@@ -64,6 +64,13 @@
 					"pathName": "pages/addBill/addBill",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/addCollection/addCollection",
+					"pathName": "pages/addCollection/addCollection",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

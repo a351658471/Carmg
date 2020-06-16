@@ -9,3 +9,37 @@
   text-align: center;
   padding: 16rpx 0 22rpx 0;
 }
+.billBox{
+  box-sizing: border-box;
+  margin:.5rem auto;
+  width: 95vw;
+  background-color: white;
+  border-radius: 15px;
+  padding: .5rem;
+  border:1px solid rgba(192, 192, 192, 0.5)
+}
+.billTitle{
+  border-bottom: 1px solid rgba(192, 192, 192, 0.308);
+  font-size: 18px;
+  margin-left: 1rem;
+}
+.billContent{
+  margin-top: .5rem;
+  display: flex;
+  margin-left: 1rem;
+  justify-content: space-between;
+  color: #686666;
+}
+.billBottom{
+  display: flex;
+  justify-content: flex-end;
+}
+.bitem{
+  width: 15vw;
+  border:1px solid rgba(192, 192, 192, 0.4);
+  margin-left: 1rem;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 45rpx;
+  height: 45rpx;
+}

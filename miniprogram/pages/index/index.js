@@ -6,27 +6,32 @@ Page({
    */
   data: {
     background: '/assets/mypage/mypage-head.png',
-    userInfo:null,
-    mgList:[
+    userInfo: null,
+    mgList: [
       {
-        img:'../../assets/mypage/mypage-total.png',
-        serveName:'数据统计',
-        msg:0,
+        img: '../../assets/mypage/mypage-total.png',
+        serveName: '数据统计',
+        msg: 0,
       },
       {
-        img:'../../assets/mypage/mypage-backlist.png',
-        serveName:'账单管理',
-        msg:1,
+        img: '../../assets/mypage/mypage-backlist.png',
+        serveName: '账单管理',
+        msg: 1,
       },
       {
-        img:'../../assets/mypage/mypage-personal.png',
-        serveName:'商家信息',
-        msg:2,
+        img: '../../assets/mypage/mypage-personal.png',
+        serveName: '商家信息',
+        msg: 2,
       },
       {
-        img:'../../assets/mypage/mypage-car.png',
-        serveName:'车辆管理',
-        msg:3,
+        img: '../../assets/mypage/mypage-car.png',
+        serveName: '车辆管理',
+        msg: 3,
+      },
+      {
+        img: '../../assets/mypage/mypage-picture.png',
+        serveName: '收款管理',
+        msg: 4,
       },
     ]
   },
@@ -37,7 +42,7 @@ Page({
   onLoad: function (options) {
     wx.getSetting({
       success: (res) => {
-        if(!res.authSetting["scope.userInfo"])return;
+        if (!res.authSetting["scope.userInfo"]) return;
         wx.getUserInfo({
           success: (res) => {
             console.log(res.userInfo)
@@ -95,25 +100,33 @@ Page({
   onShareAppMessage: function () {
 
   },
-  onGetUserInfo(e){
+  onGetUserInfo(e) {
     console.log(e);
     this.setData({
-      userInfo : e.detail.userInfo
+      userInfo: e.detail.userInfo
     })
   },
   //服务项处理
-  serveHandle(e){
+  serveHandle(e) {
     let msg = e.currentTarget.dataset.msg;
-    switch(msg){
-      case 1 :
+    switch (msg) {
+      case 1:
         return wx.navigateTo({
           url: '../bill/bill',
         });
-        case 3 :
-          return wx.navigateTo({
-            url: '../userMg/userMg',
-          });
+      case 2:
+        return wx.navigateTo({
+          url: '../shopMessage/shopMessage',
+        });
+      case 3:
+        return wx.navigateTo({
+          url: '../userMg/userMg',
+        });
+      case 4:
+        return wx.navigateTo({
+          url: '../collectionMg/collectionMg',
+        });
     }
   }
-  
+
 })

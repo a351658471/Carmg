@@ -1,17 +1,37 @@
 <!--miniprogram/pages/bill/bill.wxml-->
+<wxs src="../../utils/filter.wxs" module="formatTime"></wxs>
 <view class="billMg">
-  <view class="infoTab">
-    <mg-tab tabList="{{tabList}}" bind:tabClick="tabClick" tabCurrent="{{tabCurrent}}" soldLength="{{statusCount}}" fontSize="28rpx"></mg-tab>
-  </view>
-  <!-- <view class="isShow" wx:if="{{isShow}}">暂无车辆</view> -->
-  <view class="billBox">
-    <view class="billTop">
-       <view>
-         
-       </view>
-    </view>
-    <view class="billBottom">
-    </view>
-  </view>
-  <view class="addBill" bindtap="addBill">添加账单</view>
+	<view class="infoTab">
+		<mg-tab tabList="{{tabList}}" bind:tabClick="tabClick" tabCurrent="{{tabCurrent}}" soldLength="{{statusCount}}" fontSize="28rpx"></mg-tab>
+	</view>
+	<view style="width:100vw;background:white;height:5vh;margin-top:.2rem;text-align:center;line-height:5vh">
+			未还金额总计：{{billTotal}}
+	</view>
+	<!-- <view class="isShow" wx:if="{{isShow}}">暂无车辆</view> -->
+	<view class="billBox" wx:for="{{resData}}" wx:key="index">
+		<view class="billTop">
+			<view class="billTitle">
+				{{item.carNum}}
+			</view>
+			<view class="billContent">
+				<view class="contentLeft">
+					<view>
+						日期：{{formatTime.formatTime(item.create_time,'yyyy-mm-dd')}}
+					</view>
+					<view>
+						金额：{{item.total}}￥
+					</view>
+				</view>
+				<view class="contentRight">
+					已还：{{item.pay}}￥
+				</view>
+			</view>
+		</view>
+		<view class="billBottom">
+      <view class="bitem">编辑</view>
+      <view class="bitem">删除</view>
+		</view>
+	</view>
+	<view style="height:10vh"></view>
+	<view class="addBill" bindtap="addBill">添加账单</view>
 </view>

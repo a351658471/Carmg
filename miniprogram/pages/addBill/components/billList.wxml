@@ -11,7 +11,7 @@
 				<view class="unitBox goodsRow">
 					<view class="leftName">规格</view>
 					<view class="unitBody">
-						<view style="height: 3vh;width:10vw;text-align:center;line-height: 3vh;"><input value="{{item.unit}}" bindblur="unitChange"></input></view>
+						<view style="height: 3vh;width:10vw;text-align:center;line-height: 3vh;"><input value="{{item.unit}}" data-index="{{index}}" bindblur="unitChange"></input></view>
 						<view style="margin:0 .5rem">/</view>
 						<view class="price"><input value="{{item.price}}"  bindblur="priceChange" data-index="{{index}}" type="number"></input></view>
 					</view>

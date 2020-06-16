@@ -7,11 +7,11 @@
 		<view class="userInfo">
 			<view class="carPlate carRow">
 				<view class="userLeft"> 车牌号</view>
-				<input bindblur="carPlateBlur" placeholder="例:闽D12345" value="{{carPlate}}" bindblur="carPlateBlur"></input>
+				<input placeholder="例:闽D12345" value="{{carPlate}}" bindblur="carPlateBlur"></input>
 			</view>
 			<view class="userPhone carRow">
 				<view class="userLeft">手机号</view>
-				<input bindblur="phoneBlur" value="{{phone}}" bindblur="phoneBlur"></input>
+				<input value="{{phone}}" bindblur="phoneBlur"></input>
 			</view>
 		</view>
 	</view>
@@ -32,7 +32,7 @@
 	<view class="goods">
 		<view class="billMsg">配件清单</view>
 		<view class="goodsList">
-			<billList billList="{{resData.billList}}" bind:goodsPrice="goodsPrice" bind:nameBlur="nameBlur" bind:priceChange="priceChange" bind:reduction="reduction" bind:addFun="addFun" bind:deleteGoods="deleteGoods" bind:addGoods="addGoods"></billList>
+			<billList billList="{{resData.billList}}" bind:unitChange="unitChange" bind:nameBlur="nameBlur" bind:priceChange="priceChange" bind:reduction="reduction" bind:addFun="addFun" bind:deleteGoods="deleteGoods" bind:addGoods="addGoods"></billList>
 		</view>
 	</view>
 	<!-- 维修清单 -->

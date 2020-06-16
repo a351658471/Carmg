@@ -32,6 +32,13 @@ Component({
     let value = e.detail.value;
     this.triggerEvent('priceChange',{index:index,value:value})
   },
+  //改变规格
+  unitChange(e){
+    let index = e.currentTarget.dataset.index;
+    let value = e.detail.value;
+    this.triggerEvent('unitChange',{index:index,value:value})
+  }
+  ,
   //数量减1
   reduction(e){
     if(e.currentTarget.dataset.count == 1) return; 
